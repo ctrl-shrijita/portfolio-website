@@ -60,13 +60,30 @@
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
+        // revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
 
   revealEls.forEach(function(el){ revealObserver.observe(el); });
 
+  /* ---------- Typing animation for hero name ---------- */
+  var typingEl = document.querySelector('.typing');
+  if (typingEl) {
+    var fullName = 'Shrijita Ghosh.';
+    var index = 0;
+
+    function typeName() {
+      typingEl.textContent = fullName.slice(0, index);
+      index++;
+
+      if (index <= fullName.length) {
+        setTimeout(typeName, 110);
+      }
+    }
+
+    setTimeout(typeName, 500);
+  }
 })();
 
 //  Backend code for contact form submission
@@ -181,7 +198,10 @@ if(localStorage.getItem("theme") === "dark"){
 themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("dark-mode");
-
+    document.querySelectorAll(".reveal.visible").forEach(el => {
+    el.style.opacity = "1";
+    el.style.transform = "translateY(0)";
+    });
     if(document.body.classList.contains("dark-mode")){
 
         localStorage.setItem("theme","dark");

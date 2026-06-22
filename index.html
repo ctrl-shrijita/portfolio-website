@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shrijita Ghosh — Full-Stack Developer &amp; Data Science Portfolio</title>
+<title>Shrijita's Portfolio</title>
 <meta name="description" content="Portfolio of Shrijita Ghosh, a final year B.Tech CSE (Data Science) student at Haldia Institute of Technology, focused on full-stack and backend engineering.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-<!-- Google Fonts: Sora for display, Inter for body, JetBrains Mono for technical accents -->
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Font Awesome 6 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -54,11 +55,15 @@
     <div class="container hero-grid">
       <div class="reveal visible">
         <p class="hero-tagline">Final Year B.Tech CSE (Data Science) · Full-Stack Engineering</p>
-        <h1>Hi, I'm <span class="gradient-text">Shrijita Ghosh</span></h1>
+        <h1>Hi, I'm <span class="typing gradient-text"></span></h1>
         <p class="hero-summary">Final year B.Tech student in Computer Science and Engineering (Data Science), with experience in full-stack development, RESTful APIs, database management, and scalable web applications using React.js, Node.js, Express.js, MongoDB, MySQL, and Python. I have a strong interest in backend engineering, system design, and software development.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> View My Work</a>
           <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-paper-plane"></i> Contact Me</a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="fa-solid fa-code-branch"></i> 5+ Projects</span>
+          
         </div>
         <div class="hero-socials">
           <a href="https://github.com/ctrl-shrijita" class="social-icon" aria-label="GitHub profile" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
@@ -147,7 +152,7 @@
             <p class="edu-meta">K.T.P.P. High School, Kolaghat · 2020</p>
           </div>
 
-          <a href="#" class="btn btn-primary"><i class="fa-solid fa-download"></i> Download Resume</a>
+          <a href="shrijita_resume_now.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> Download Resume</a>
         </div>
       </div>
     </div>
@@ -199,7 +204,9 @@
 
       <div class="project-grid">
         <article class="project-card reveal">
-          <div class="project-thumb thumb-1"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <div class="project-thumb thumb-1">
+            <img src="project-image/sendora-image.jpeg" alt="Sendora preview" class="project-thumb-img">
+          </div>
           <div class="project-body">
             <p class="proj-year">2026 · GitHub</p>
             <h3>Sendora — Full Stack Email Management Platform</h3>
@@ -207,12 +214,14 @@
             <div class="tag-row">
               <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span>
             </div>
-            <a href="https://github.com/ctrl-shrijita" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://github.com/ctrl-shrijita/sendora" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="project-card reveal">
-          <div class="project-thumb thumb-2"><i class="fa-solid fa-book-open"></i></div>
+          <div class="project-thumb thumb-2">
+            <img src="project-image/SynthLibrary-image.png" alt="Synth Library preview" class="project-thumb-img">
+          </div>
           <div class="project-body">
             <p class="proj-year">2026 · GitHub</p>
             <h3>Synth Library — Full Stack Digital Library Management System</h3>
@@ -220,12 +229,14 @@
             <div class="tag-row">
               <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB Atlas</span><span class="tag">JWT</span><span class="tag">RBAC</span>
             </div>
-            <a href="https://github.com/ctrl-shrijita" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://github.com/ctrl-shrijita/synth-library" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
         <article class="project-card reveal">
-          <div class="project-thumb thumb-3"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="project-thumb thumb-3">
+            <img src="project-image/bookflix-image.jpg" alt="Book Recommendation System preview" class="project-thumb-img">
+          </div>
           <div class="project-body">
             <p class="proj-year">2026 · Hosted</p>
             <h3>Book Recommendation System</h3>
@@ -233,7 +244,8 @@
             <div class="tag-row">
               <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">REST API</span>
             </div>
-            <a href="#" class="project-link">View Live Project <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://github.com/ctrl-shrijita/bookflix" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://bookflix.onrender.com/" class="project-link" target="_blank" rel="noopener">View Live <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -246,7 +258,7 @@
             <div class="tag-row">
               <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
             </div>
-            <a href="https://github.com/ctrl-shrijita" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://github.com/ctrl-shrijita/insurance-cost-analysis" class="project-link" target="_blank" rel="noopener">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
       </div>
