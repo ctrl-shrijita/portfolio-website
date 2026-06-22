@@ -101,7 +101,7 @@ const message = document.getElementById("message").value.trim();
 try {
 
     const response = await fetch(
-        "http://localhost:5000/send-message",
+        "https://portfolio-website-oubx.onrender.com/send-message",
         {
             method: "POST",
 
