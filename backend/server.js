@@ -14,13 +14,21 @@ cors({
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    
+    host: "smtp-relay.brevo.com",
     port: 587,
     secure: false,
-    requireTLS: true,
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        user: process.env.BREVO_USER,
+        pass: process.env.BREVO_PASS
+    }
+});
+transporter.verify(function (error, success) {
+    if (error) {
+        console.log("VERIFY ERROR:");
+        console.log(error);
+    } else {
+        console.log("SMTP server is ready.");
     }
 });
 
@@ -31,23 +39,23 @@ const { name, email, message } = req.body;
 try {
 
     await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
+    from: `"Portfolio Website" <shrijitaghosh7@gmail.com>`,
+    to: "shrijitaghosh7@gmail.com",
 
-        subject: "New Portfolio Contact Message",
+    subject: "New Portfolio Contact Message",
 
-        html: `
-            <h2>New Message From Portfolio</h2>
+    html: `
+        <h2>New Message From Portfolio</h2>
 
-            <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${name}</p>
 
-            <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${email}</p>
 
-            <p><strong>Message:</strong></p>
+        <p><strong>Message:</strong></p>
 
-            <p>${message}</p>
-        `
-    });
+        <p>${message}</p>
+    `
+});
 
     res.status(200).json({
         success: true,
