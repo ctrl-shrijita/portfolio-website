@@ -121,29 +121,47 @@ cd portfolio-website
 
 ---
 
-### 2. Install Backend Dependencies
+### 2. Configure Vercel Environment Variables
+
+Set the following variable in your Vercel project settings:
+
+```text
+BREVO_API_KEY=your_brevo_api_key
+```
+
+The contact form is handled by the serverless function at `api/send-message.js`.
+
+---
+
+### 3. Deploy to Vercel
+
+Deploy the project root to Vercel. The frontend and backend function are deployed together.
+
+The contact form endpoint becomes:
+
+```text
+https://<your-vercel-app>.vercel.app/api/send-message
+```
+
+---
+
+### 4. Local Backend Development (Optional)
+
+If you want to run the legacy backend locally, use the `backend/` folder and create a `.env` file there with Gmail credentials.
 
 ```bash
 cd backend
-
 npm install
 ```
 
----
-
-### 3. Configure Environment Variables
-
-Create a `.env` file inside the backend folder:
+Create `backend/.env`:
 
 ```env
 EMAIL_USER=your_email@gmail.com
-
 EMAIL_PASS=your_app_password
 ```
 
----
-
-### 4. Start the Backend Server
+Then start the local server:
 
 ```bash
 node server.js
