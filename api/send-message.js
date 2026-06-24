@@ -47,24 +47,29 @@ module.exports = async function handler(req, res) {
         const tranEmailApi = new SibApiV3Sdk.TransactionalEmailsApi();
 
         await tranEmailApi.sendTransacEmail({
-            sender: {
-                email: 'shrijitaghosh7@gmail.com',
-                name: 'Portfolio Website'
-            },
-            to: [
-                {
-                    email: 'shrijitaghosh7@gmail.com'
-                }
-            ],
-            subject: 'New Portfolio Contact Message',
-            htmlContent: `
-                <h2>New Message From Portfolio</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-            `
-        });
+    sender: {
+        email: 'shrijitaghosh7@gmail.com',
+        name: 'Portfolio Website'
+    },
+    to: [
+        {
+            email: 'shrijitaghosh7@gmail.com',
+            name: 'Shrijita Ghosh'
+        }
+    ],
+    replyTo: {
+        email: email,
+        name: name
+    },
+    subject: 'New Portfolio Contact Message',
+    htmlContent: `
+        <h2>New Message From Portfolio</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+    `
+});
 
         return res.status(200).json({
             success: true
